@@ -35,6 +35,24 @@ new SwitchHandler({
   onInvalid: (value) => console.log(`Invalid switch value: "${value}"`) // if states given on switchFile invalid, do code here
 });
 ```
+
+### Options
+>[!NOTE]
+>Options who have a leading question mark (?) are optional and **not required**, however if you want to use them, make sure to remove it!
+
+```javascript
+const SwitchHandler = require('switdule');
+
+new SwitchHandler({
+switchFile: string,
+trueStates: ["true","yes"],
+falseStates: ["false","no"],
+onTrue: (state) => console.log("true", state),
+onFalse: (state) => console.log("false", state),
+onInvalid?: (state) => console.log("invalid", state),
+
+});
+```
 ### Contribution
 
 We welcome contributions from everyone! Here's how to contribute this project:

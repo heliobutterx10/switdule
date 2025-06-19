@@ -40,8 +40,8 @@ class Switcher {
 
   _normalizeArray(value) {
     return Array.isArray(value)
-      ? value.map((v) => v.toUpperCase())
-      : [value.toUpperCase()];
+      ? value.map((v) => v)
+      : [value];
   }
 
   _init() {
@@ -75,14 +75,14 @@ class Switcher {
     if (this.trueStates.includes(currentState)) {
       logMessage("success", `Switch matched TRUE state: "${currentState}"`);
       if (typeof this.handleTrue === "function") {
-        this.handleTrue();
+        this.handleTrue(currentState);
       } else {
         logMessage("warn", `No handler for TRUE state.`);
       }
     } else if (this.falseStates.includes(currentState)) {
       logMessage("success", `Switch matched FALSE state: "${currentState}"`);
       if (typeof this.handleFalse === "function") {
-        this.handleFalse();
+        this.handleFalse(currentState);
       } else {
         logMessage("warn", `No handler for FALSE state.`);
       }
