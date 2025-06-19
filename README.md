@@ -56,8 +56,8 @@ new SwitchHandler({
   onInvalid: (value) => console.log(`Invalid switch value: "${value}"`) // if states given on switchFile invalid, do code here
 });
 ```
-To create module your code need exported using [`module.exports`](https://nodejs.org/api/modules.html#moduleexports) and imported using [`require()`](https://nodejs.org/api/modules.html#requireid) and place in "Modules" directory
-Then make logic on `onTrue`,`onFalse` or `onInvalid`. 
+To create module, your code need exported using [`module.exports`](https://nodejs.org/api/modules.html#moduleexports) and imported using [`require()`](https://nodejs.org/api/modules.html#requireid) also place in "Modules" directory
+then make logic on `onTrue`,`onFalse` or `onInvalid`. 
 ### Options
 >[!NOTE]
 >Options who have a leading question mark (?) are optional and **not required**, however if you want to use them, make sure to remove it!
