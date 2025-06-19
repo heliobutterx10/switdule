@@ -4,60 +4,59 @@
 </p>
 
 <div align="center">
-  <b>A simple module switcher to switch different modules in one directory.</b>
+  <b>A simple module switcher for switching between different modules in a single directory.</b>
 </div>
 
 ---
 
 ## About
 
-switdule is simple package to switching different modules/project in one directory/hosting
+Switdule is a simple package for switching between different modules/projects within a single directory/hosting.
 
-This is very useful if you want to use 2 or more modules in one hsoting for saving money and resource
+This is very useful if you want to use two or more modules within a single hosting to save costs and resources.
 
 ## Features
 
-- Switch module from **text file** to make _easier way_
-- Maximum of modules are **infinite**, __*you can customize as many as you want*__
-- Compatible on Hosting CLI-only or GUI-only
-- Module only need `module.exports`
+- Switch modules using only **text file** to make switching modules easier
+- The maximum number of modules is **__unlimited__**; *you can customize as many as you want*
+- Compatible with `CLI-only` or `GUI-only` hosting
+- Modules only require `module.exports`
 
 ## Setup
 Install the package using NPM:
 ```bash
 npm install github:heliobutterx10/switdule
 ```
-Then, after that create a new directory named "Modules" to save your modules and paste this code in `index.js` or your main file:
+Then, create a new directory named “Modules” to store your modules and paste this code into `index.js` or your main file:
 ```javascript
-const module1 = require('./Modules/module1') // function exported module
-const module2 = require('./Modules/module2') // class exported module
-const module3 = require('./Modules/module3') // object exported module
-const module4 = require('./Modules/module4') // object + method exported module
-// change all modules with your modules
-const SwitchHandler = require('switdule');
+const module1 = require(‘./Modules/module1’) // module exported as a function
+const module2 = require(‘./Modules/module2’) // module exported as a class
+const module3 = require(‘./Modules/module3’) // module exported as an object
+const module4 = require(‘./Modules/module4’) // module exported as an object + methods
+// replace all modules with your modules
+const SwitchHandler = require(‘switdule’);
 
 new SwitchHandler({
-  switchFile: './switch.txt', // change this to your switcher text file
-  trueStates: ['ON', 'ENABLE'], // you can add more states here to make you can switch more modules
-  falseStates: ['OFF', 'DISABLE'], // you can add more states here to make you can switch more modules
-  onTrue: (state) => if (state == 'ON') { // example 1
-    module1("Hello World!")               
-  } else if (state == 'ENABLE') {         // example 2
-    const user = new module2("heliobutterx10");
+  switchFile: ‘./switch.txt’, // replace this with your switch text file
+  trueStates: [‘ON’, ‘ENABLE’], // you can add more states here to enable more modules
+  falseStates: [‘OFF’, ‘DISABLE’], // you can add more states here to enable more modules
+  onTrue: (state) => if (state == ‘ON’) { // example 1
+    module1(“Hello World!”)               
+  } else if (state == ‘ENABLE’) {         // example 2
+    const user = new module2(“heliobutterx10”);
     user.sayHi();
-  }, // if trueStates in switchFile matched, do code here
-  onFalse: (state) => if (state == 'OFF') { // example 3
+  }, // if trueStates in switchFile match, run the code here
+  onFalse: (state) => if (state == ‘OFF’) { // example 3
     console.log(module3.appName);
     console.log(module3.version);
-  } else if (state == 'DISABLE') {           // example 4
+  } else if (state == ‘DISABLE’) {           // example 4
     module4.doSomething();
-    console.log("Status:", module4.status);
-  }, // if falseStates in switchFile matched, do code here
-  onInvalid: (value) => console.log(`Invalid switch value: "${value}"`) // if states given on switchFile invalid, do code here
+    console.log(“Status:”, module4.status);
+  }, // if the falseStates value in switchFile matches, run the code here
+  onInvalid: (value) => console.log(`Invalid switch value: “${value}”`) // if the states value provided in switchFile is invalid, run the code here
 });
 ```
-To create module, your code need exported using [`module.exports`](https://nodejs.org/api/modules.html#moduleexports) and imported using [`require()`](https://nodejs.org/api/modules.html#requireid) also place in "Modules" directory
-then make logic on `onTrue`,`onFalse` or `onInvalid`. 
+To create a module, your code needs to be exported using [`module.exports`](https://nodejs.org/api/modules.html#moduleexports) and placed in the “Modules” directory, then create logic in `onTrue`, `onFalse`, or `onInvalid` using your module.
 ### Options
 >[!NOTE]
 >Options who have a leading question mark (?) are optional and **not required**, however if you want to use them, make sure to remove it!
