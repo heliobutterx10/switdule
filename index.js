@@ -64,8 +64,7 @@ class Switcher {
     try {
       currentState = fs
         .readFileSync(this.switchFilePath, "utf-8")
-        .trim()
-        .toUpperCase();
+        .trim();
       logMessage("info", `Current switch state: "${currentState}"`);
     } catch (err) {
       logMessage("error", `Failed to read switch file: ${err.message}`);
