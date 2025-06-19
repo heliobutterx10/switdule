@@ -22,6 +22,10 @@ This is very useful if you want to use 2 or more modules in one hsoting for savi
 - Compatible on Hosting CLI-only or GUI-only
 
 ## Setup
+Install the package using NPM:
+```bash
+npm install github:heliobutterx10/switdule
+```
 
 ```javascript
 const SwitchHandler = require('switdule');
