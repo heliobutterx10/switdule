@@ -1,0 +1,25 @@
+{
+  "name": "switdule",
+  "version": "1.0.0",
+  "description": "A homemade module switcher. Made by heliobutter :3",
+  "main": "index.js",
+  "author": "heliobutter",
+  "license": "MIT",
+  "keywords": [
+    "module",
+    "switcher",
+    "dynamic",
+    "multiproject"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heliobutterx10/switdule.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heliobutterx10/switdule/issues"
+  },
+  "homepage": "https://github.com/heliobutterx10/switdule#readme",
+  "dependencies": {
+    "cfonts": "^3.1.0"
+  }
+}
