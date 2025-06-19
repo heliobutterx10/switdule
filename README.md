@@ -1,5 +1,4 @@
 <p align="center">
-  <a href="https://aoi.js.org">
     <img width="500" src="img/image.png" alt="switdule">
   </a>
 </p>
