@@ -50,7 +50,9 @@ falseStates: ["false","no"],
 onTrue: (state) => console.log("true", state),
 onFalse: (state) => console.log("false", state),
 onInvalid?: (state) => console.log("invalid", state),
-
+showBanner?: boolean,
+bannerText?: string,
+bannerGradient?: array
 });
 ```
 ### Contribution
