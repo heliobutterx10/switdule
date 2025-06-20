@@ -13,7 +13,7 @@ const logColors = {
 function logMessage(type, message) {
   const timestamp = new Date().toLocaleTimeString("en-US", {
     hour12: false,
-    timeZone: "Asia/Jakarta",
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
   });
 
   const color = logColors[type] || "";
